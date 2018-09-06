@@ -319,4 +319,20 @@ end
 
 
 %for each bit position, for each row, and each hj in a set Al, 
-%compute the probabilities of sigma_zero and sigma_1
+%compute the probabilities of sigma_zero and sigma_one
+
+%From Lin/Costello
+%The implementation of sum product algorithm is based on the computation
+%of the marginal a posteriori probabilities
+%P(v of l given y)
+%for l between zero and n, where y is the soft-decision received sequence.
+%Then, the log liklihood ratio for each code bit is given by
+%L(vl) = log [ (Pthat vl = 1 given y) / (P that vl = 0 given y) ]
+
+%so there is a conditional probability (q) that the transmitted code bit vl has
+%the value x, given the check-sums computed based on the check vectors in
+%Al, not including hj, at the ith decoding iteration. 
+
+%sigma_x is the conditional probability that the check-sum sj is satisfied
+%given vl = x and the other code bites in H(hj) have a separable
+%distribution (I think this is the q). 

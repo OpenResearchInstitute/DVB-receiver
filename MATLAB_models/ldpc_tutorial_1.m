@@ -290,6 +290,9 @@ Al
 
 %There's another index set involved, called B(hj) or "support of hj"
 %we made it before by looping through H.
+%each row of B turns each 1 of the row of H into the column position.
+%In this row, this particular column position l has a 1. 
+%then make it sparse
 %now we use the supports of hj to index the summation and product of sigma
 %Using sparse(B) may be much more efficient. Indexing is confusing though.
 
@@ -335,4 +338,4 @@ end
 
 %sigma_x is the conditional probability that the check-sum sj is satisfied
 %given vl = x and the other code bites in H(hj) have a separable
-%distribution (I think this is the q). 
+%distribution (I think this is the q).

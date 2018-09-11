@@ -346,12 +346,3 @@ vv = [1 0 1 1]*G;
 vv = mod(vv,m)
 
 HofG = null(G, 'r')
-HofG = mod(HofG, m)
-
-vcheck = [1 0 0 1 1 1 1]
-mod(vcheck*HofG, m)
-
-
-
-HofG = transpose(HofG)
-

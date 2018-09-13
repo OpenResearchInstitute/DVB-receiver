@@ -351,7 +351,21 @@ HofG = mod(HofG, m)
 vcheck = [1 0 0 1 1 1 1]
 mod(vcheck*HofG, m)
 
-
-
 HofG = transpose(HofG)
+%p(y|x=a)=1/sqrt(2*pi)*exp(-(y-a)^2/(2s))
+%p(r|x=1)=1/sqrt(2*pi)*exp(-(y-1)^2/(2*0.1))
 
+
+r= [-1.1	 -1.2	 -0.9	   -0.3	   -0.8	   -1.5	    -1.1	    -1.2	    -0.2	     -1.1]
+entry = (2*r)/((0.1)*(0.1))
+entry = abs(entry)/250
+
+
+prob1 = (1/sqrt(2*pi))*exp((-(r-1).^2)/(2*0.1))
+prob0 = (1/sqrt(2*pi))*exp((-(r+1).^2)/(2*0.1))
+
+ach = [0.12, 0.04, 0.28, 0.59]
+ach4 = ach(1)*(1-ach(2))*(1-ach(3)) + ach(2)*(1-ach(1))*(1-ach(3)) + ach(3)*(1-ach(1))*(1-ach(2)) + ach(1)*ach(2)*ach(3)
+ach3 = ach(1)*(1-ach(2))*(1-ach(4)) + ach(2)*(1-ach(1))*(1-ach(4)) + ach(4)*(1-ach(1))*(1-ach(2)) + ach(1)*ach(2)*ach(4)
+ach2 = ach(1)*(1-ach(4))*(1-ach(3)) + ach(4)*(1-ach(1))*(1-ach(3)) + ach(3)*(1-ach(1))*(1-ach(4)) + ach(1)*ach(4)*ach(3)
+ach1 = ach(4)*(1-ach(2))*(1-ach(3)) + ach(2)*(1-ach(4))*(1-ach(3)) + ach(3)*(1-ach(4))*(1-ach(2)) + ach(4)*ach(2)*ach(3)

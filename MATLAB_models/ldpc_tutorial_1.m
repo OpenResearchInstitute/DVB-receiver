@@ -4,7 +4,7 @@
 %The LDPC codes used in DVB-S2/X are different and the models 
 %will be in a different file.
 
-%by Abraxas3d
+%by Abraxas3d updated at GRCon2018 as a test.
 
 m = 2;
 %for modulo 2 arithmetic

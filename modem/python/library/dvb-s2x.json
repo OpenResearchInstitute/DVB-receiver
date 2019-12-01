@@ -1,0 +1,46 @@
+{
+	"BPSK"	:	{
+		"bit_map" 			:  [[1, 0],
+								[1, np.pi]],
+		"bits_per_symbol"	:	1
+	},
+
+	"QPSK"	:	{
+		"bit_map" 			:  [[1, 1*np.pi/4],
+								[1, 3*np.pi/4],
+								[1, 5*np.pi/4],
+								[1, 7*np.pi/4]],
+		"bits_per_symbol"	:	2
+	},
+
+	"8PSK"	:	{
+		"bit_map" 			:  [[1, np.pi/4],
+								[1, 0],
+								[1, 4*np.pi/4],
+								[1, 5*np.pi/4],
+								[1, 2*np.pi/4],
+								[1, 7*np.pi/4],
+								[1, 3*np.pi/4],
+								[1, 6*np.pi/4]],
+		"bits_per_symbol"	:	3
+	},
+
+	"8APSK"	:	{
+		"bits_per_symbol"	:	3,
+		"100/180" 			:	{
+			"circle_radii"		:	
+			"bit_map" 			:  [[R1, 0],
+									[R2, 1.352*np.pi],
+									[R2, 0.648*np.pi],
+									[1.0, 0],
+									[R1, np.pi],
+									[R2, -0.352*np.pi],
+									[R2, 0.352*np.pi],
+									[1.0, np.pi]]}
+		
+	},
+
+
+
+
+}

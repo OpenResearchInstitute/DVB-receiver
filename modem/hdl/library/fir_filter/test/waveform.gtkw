@@ -1,0 +1,93 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Wed Nov 27 19:23:27 2019
+[*]
+[dumpfile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/fir_filter/test/waveform.vcd"
+[dumpfile_mtime] "Tue Nov 26 20:54:56 2019"
+[dumpfile_size] 657734
+[savefile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/fir_filter/test/waveform.gtkw"
+[timestart] 0
+[size] 1366 715
+[pos] -1 -1
+*-9.279564 1230 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] fir_filter.
+[treeopen] fir_filter.macs[0].
+[treeopen] fir_filter.macs[1].
+[treeopen] fir_filter.macs[2].
+[treeopen] fir_filter.macs[3].
+[treeopen] fir_filter.macs[4].
+[treeopen] fir_filter.macs[5].
+[treeopen] fir_filter.macs[6].
+[treeopen] fir_filter.macs[7].
+[treeopen] fir_filter.macs[8].
+[sst_width] 248
+[signals_width] 366
+[sst_expanded] 1
+[sst_vpaned_height] 185
+@200
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+@22
+fir_filter.ce_carry[15:0]
+@28
+fir_filter.clock
+@22
+fir_filter.coefficient_in[15:0]
+fir_filter.coefficient_index[3:0]
+fir_filter.coefficient_load_en[15:0]
+@28
+fir_filter.coefficient_reset
+fir_filter.coefficients_in_aclk
+fir_filter.coefficients_in_aresetn
+@22
+fir_filter.coefficients_in_tdata[15:0]
+@28
+fir_filter.coefficients_in_tlast
+fir_filter.coefficients_in_tready
+fir_filter.coefficients_in_tvalid
+fir_filter.data_in_aclk
+fir_filter.data_in_aresetn
+@22
+fir_filter.data_in_tdata[15:0]
+@28
+fir_filter.data_in_tlast
+fir_filter.data_in_tready
+fir_filter.data_in_tvalid
+@420
+fir_filter.data_out[15:0]
+@28
+fir_filter.data_out_aclk
+fir_filter.data_out_aresetn
+@421
+fir_filter.data_out_tdata[15:0]
+@28
+fir_filter.data_out_tlast
+fir_filter.data_out_tready
+fir_filter.data_out_tvalid
+fir_filter.empty_remaining
+@22
+fir_filter.filter_data_in[15:0]
+@420
+fir_filter.i
+@28
+fir_filter.reset
+fir_filter.samples_remaining
+@22
+fir_filter.tlast_carry[15:0]
+fir_filter.tlast_clear_count[3:0]
+fir_filter.tlast_delay_line[16:0]
+@28
+fir_filter.tlast_latch
+@22
+fir_filter.tvalid_delay_line[16:0]
+[pattern_trace] 1
+[pattern_trace] 0

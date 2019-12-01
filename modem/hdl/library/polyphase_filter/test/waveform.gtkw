@@ -1,0 +1,80 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Wed Nov 27 21:27:38 2019
+[*]
+[dumpfile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/polyphase_filter/test/waveform.vcd"
+[dumpfile_mtime] "Wed Nov 27 21:23:37 2019"
+[dumpfile_size] 874108
+[savefile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/polyphase_filter/test/waveform.gtkw"
+[timestart] 507
+[size] 1366 715
+[pos] -1 -1
+*-8.441508 690 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] polyphase_filter.
+[treeopen] polyphase_filter.fir_filter[0].
+[treeopen] polyphase_filter.fir_filter[0].fir_filter_inst.macs[0].
+[treeopen] polyphase_filter.fir_filter[0].fir_filter_inst.macs[1].
+[treeopen] polyphase_filter.fir_filter[1].
+[treeopen] polyphase_filter.fir_filter[2].
+[treeopen] polyphase_filter.fir_filter[3].
+[treeopen] polyphase_filter.fir_filter[4].
+[treeopen] polyphase_filter.fir_filter[5].
+[treeopen] polyphase_filter.fir_filter[6].
+[treeopen] polyphase_filter.fir_filter[7].
+[sst_width] 248
+[signals_width] 566
+[sst_expanded] 1
+[sst_vpaned_height] 185
+@28
+polyphase_filter.data_in_aclk
+polyphase_filter.data_in_aresetn
+polyphase_filter.data_in_tlast
+polyphase_filter.data_in_tready
+polyphase_filter.data_in_tvalid
+@22
+polyphase_filter.data_in_tdata[15:0]
+@200
+-
+@28
+polyphase_filter.data_out_aclk
+polyphase_filter.data_out_aresetn
+polyphase_filter.data_out_tlast
+polyphase_filter.data_out_tready
+polyphase_filter.data_out_tvalid
+@420
+polyphase_filter.data_out_tdata[15:0]
+@200
+-
+@22
+polyphase_filter.fir_filter[0].fir_filter_inst.data_in_tdata[15:0]
+@28
+polyphase_filter.fir_filter[0].fir_filter_inst.data_in_tready
+polyphase_filter.fir_filter[0].fir_filter_inst.data_in_tvalid
+@22
+polyphase_filter.fir_filter[0].fir_filter_inst.data_out_tdata[15:0]
+@28
+polyphase_filter.fir_filter[0].fir_filter_inst.data_out_tvalid
+@200
+-
+@28
+polyphase_filter.fir_filter[1].fir_filter_inst.tlast_latch
+polyphase_filter.fir_filter[0].fir_filter_inst.empty_remaining
+polyphase_filter.fir_filter[0].fir_filter_inst.tlast_latch
+@22
+polyphase_filter.fir_filter[1].fir_filter_inst.data_in_tdata[15:0]
+@28
+polyphase_filter.fir_filter[1].fir_filter_inst.data_in_tlast
+polyphase_filter.fir_filter[1].fir_filter_inst.data_in_tready
+polyphase_filter.fir_filter[1].fir_filter_inst.data_in_tvalid
+@420
+polyphase_filter.fir_filter[1].fir_filter_inst.data_out_tdata[15:0]
+@28
+polyphase_filter.fir_filter[1].fir_filter_inst.data_out_tready
+polyphase_filter.fir_filter[1].fir_filter_inst.data_out_tlast
+polyphase_filter.fir_filter[1].fir_filter_inst.data_out_tvalid
+polyphase_filter.fir_filter[1].fir_filter_inst.tvalid_delay_line[5:0]
+polyphase_filter.fir_filter[1].fir_filter_inst.tlast_delay_line[8:0]
+@200
+-
+[pattern_trace] 1
+[pattern_trace] 0

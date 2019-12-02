@@ -6,6 +6,6 @@ A generic APSK modulator engine, supporting one to eight bits per sample.  Desig
 
 A diagram of the APSK modulator architecture is shown below:
 
-![APSK Modulator Architecture](block_diagram.svg)
+![APSK Modulator Architecture](doc/block_diagram.svg)
 
 The design currently instantiates Xilinx primitive macros although these could be easily changed to another architecture (FPGA or ASIC).

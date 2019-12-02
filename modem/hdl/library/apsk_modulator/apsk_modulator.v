@@ -76,14 +76,16 @@
 
 	// define some constants
 	localparam integer ADDRESS_WIDTH 			= 8;
+	localparam integer DATA_LATCH_EXCESS 		= 8;
+	localparam integer DATA_LATCH_WIDTH 		= DATA_IN_TDATA_WIDTH + DATA_LATCH_EXCESS;
 	localparam integer BITS_PER_SYMBOL_WIDTH 	= $clog2(ADDRESS_WIDTH+1);
 
 	wire  									reset;
 
 	// data in signals
 	reg [$clog2(DATA_IN_TDATA_WIDTH):0]		data_in_count;
-	reg [DATA_IN_TDATA_WIDTH-1:0]			data_in_latch;
-	reg [ADDRESS_WIDTH-1:0]					data_in_latch_mask;
+	reg [DATA_LATCH_WIDTH-1:0]				data_in_latch;
+	reg [7:0]								data_in_latch_mask;
 	reg 									data_in_tlast_latched;
 
 
@@ -166,6 +168,9 @@
 		end
 	end
 
+	
+	// if the data input count has reached 
+	assign data_in_tready = !(data_in_count > bits_per_symbol) ? lut_data_in_tready & !data_in_tlast_latched : 0;
 
 
 	// count how many bits are left in the input shift register
@@ -175,14 +180,14 @@
 		end
 		else begin
 
-			// need to keep clearing the current data
-			if ((data_in_count > 0) & lut_data_out_tready & lut_data_out_tvalid) begin
-				data_in_count <= data_in_count - bits_per_symbol;
+			// new data, reset count
+			if ((data_in_count <= bits_per_symbol) & data_in_tready & data_in_tvalid) begin
+				data_in_count <= DATA_IN_TDATA_WIDTH - bits_per_symbol + data_in_count;
 			end
 
-			// new data, reset count
-			else if (data_in_tready & data_in_tvalid) begin
-				data_in_count <= DATA_IN_TDATA_WIDTH-bits_per_symbol;
+			// need to keep clearing the current data
+			else if (lut_data_out_tready & lut_data_out_tvalid) begin
+				data_in_count <= data_in_count - bits_per_symbol;
 			end
 
 			// register the count
@@ -205,7 +210,7 @@
 
 			// if at the end of the shifting out data then signal last sample
 			//  and clear latch
-			if ((data_in_count == 0) & !data_in_tlast) begin
+			if (!(data_in_count >= bits_per_symbol) & !data_in_tlast) begin
 				lut_data_in_tlast <= data_in_tlast_latched;
 			end
 
@@ -228,14 +233,30 @@
 		end
 		else begin
 
-			// shift the input register to obtain fresh information at the bottom
-			if ((data_in_count > 0) & lut_data_out_tready & lut_data_out_tvalid) begin
-				data_in_latch <= data_in_latch >> bits_per_symbol;
+			// new input so latch it into the shift register
+			if ((data_in_count <= bits_per_symbol) & data_in_tready & data_in_tvalid) begin
+
+				// blocking shift of the register before mapping - may not be a very good may to perform this
+				data_in_latch = data_in_latch >> bits_per_symbol;
+
+				// figure out how to keep the requried samples left over
+				case (data_in_count)
+					0  : data_in_latch <= {8'd0, data_in_tdata};
+					1  : data_in_latch <= {7'd0, data_in_tdata, data_in_latch[0]};
+					2  : data_in_latch <= {6'd0, data_in_tdata, data_in_latch[1:0]};
+					3  : data_in_latch <= {5'd0, data_in_tdata, data_in_latch[2:0]};
+					4  : data_in_latch <= {4'd0, data_in_tdata, data_in_latch[3:0]};
+					5  : data_in_latch <= {3'd0, data_in_tdata, data_in_latch[4:0]};
+					6  : data_in_latch <= {2'd0, data_in_tdata, data_in_latch[5:0]};
+					7  : data_in_latch <= {1'd0, data_in_tdata, data_in_latch[6:0]};
+					8  : data_in_latch <= {data_in_tdata, data_in_latch[7:0]};
+					default : data_in_latch <= {8'd0, data_in_tdata};
+				endcase
 			end
 
-			// new input so latch it into the shift register
-			else if (data_in_tready & data_in_tvalid) begin
-				data_in_latch <= data_in_tdata;
+			// shift the input register to obtain fresh information at the bottom
+			else if (lut_data_out_tready & lut_data_out_tvalid) begin
+				data_in_latch <= data_in_latch >> bits_per_symbol;
 			end
 
 			// register the signal
@@ -244,9 +265,7 @@
 			end
 		end
 	end
-	
-	// if the data input count has reached 
-	assign data_in_tready = (data_in_count == 0) ? lut_data_in_tready & !data_in_tlast_latched : 0;
+
 
 	// select a bit mask depending on the number of bits of symbol
 	// TODO should be change from hardcoded

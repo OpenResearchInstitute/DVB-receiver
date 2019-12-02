@@ -11,7 +11,7 @@ module multiply_accumulate #
 	// operation definitions
 	parameter integer DATA_IN_NUMBER_REGS = 1,
 	parameter integer COEFFICIENTS_NUMBER_REGS = 1,
-	parameter integer USE_SILICON_CARRY = 0,
+	parameter integer USE_SILICON_CARRY = 1,
 	parameter integer FIRST_IN_CHAIN = 0,
 	parameter integer LAST_IN_CHAIN = 0
 )
@@ -292,13 +292,13 @@ module multiply_accumulate #
 		.RSTP(RSTP)
 	);
 
-	// // used to create the GTKwave dump file
-	// `ifdef COCOTB_SIM
-	// 		initial begin
-	// 		$dumpfile ("waveform.vcd");
-	// 		$dumpvars (0, multiply_accumulate);
-	// 		#1;
-	// 	end
-	// `endif
+	// used to create the GTKwave dump file
+	`ifdef COCOTB_SIM
+			initial begin
+			$dumpfile ("waveform.vcd");
+			$dumpvars (0, multiply_accumulate);
+			#1;
+		end
+	`endif
 
 endmodule

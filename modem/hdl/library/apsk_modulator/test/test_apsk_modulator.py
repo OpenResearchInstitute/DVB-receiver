@@ -17,10 +17,6 @@ import helper_functions
 
 
 
-
-
-
-
 @cocotb.test()
 def basic(dut):
 	"""
@@ -31,14 +27,17 @@ def basic(dut):
 	dut_control_obj = dut_control_apsk_modulator.dut_control_apsk_modulator(dut)
 	yield dut_control_obj.init()
 
+
 	# dut_control_obj.PLOT = False
 	dut_control_obj.PLOT = True
 
 	# select the modulation type
-	# yield dut_control_obj.set_modulation(["216", "QPSK 11/45"])
-	# yield dut_control_obj.set_modulation(["150", "16APSK 8/15-L"])
-	# yield dut_control_obj.set_modulation(["214", "256APSK 3/4"])
+	# yield dut_control_obj.set_modulation(["216", "QPSK 11/45"])c
 	yield dut_control_obj.set_modulation(["142", "8PSK 23/36"])
+	# yield dut_control_obj.set_modulation(["150", "16APSK 8/15-L"])
+	# yield dut_control_obj.set_modulation(["184", "64APSK 32/45-L"])
+	# yield dut_control_obj.set_modulation(["200", "128APSK 3/4"])
+	# yield dut_control_obj.set_modulation(["214", "256APSK 3/4"])
 
 	# repeat multiple test
 	for i in range(dut_control_obj.NUMBER_REPEAT_TESTS):
@@ -79,23 +78,16 @@ def all_modulations(dut):
 	dut_control_obj.PLOT = False
 	# dut_control_obj.PLOT = True
 
-
+	# get a list of the modulation types
 	modulation_code_list = list(dut_control_obj.modulation_definition.keys())
 	modulation_code_list.remove("modulation_type_depth")
 
 	# loop through all modualtion types
 	for modulation_code in modulation_code_list:
 
-		print(modulation_code)
-
 		# pull out the names of the modulation
 		modulation = dut_control_obj.modulation_definition[modulation_code]
-		
-		print(modulation)
-
 		modulation_name = list(modulation.keys())[0]
-
-		print(modulation_name)
 
 		# select the modulation type
 		dut_control_obj.dut._log.info("Setting up modulation %s : %s" % (modulation_code, modulation_name))

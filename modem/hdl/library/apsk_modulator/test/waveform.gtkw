@@ -1,22 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Sat Nov 30 15:54:59 2019
+[*] Sun Dec  1 14:38:34 2019
 [*]
 [dumpfile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/apsk_modulator/test/waveform.vcd"
-[dumpfile_mtime] "Sat Nov 30 15:52:36 2019"
-[dumpfile_size] 58459465
+[dumpfile_mtime] "Sun Dec  1 14:37:06 2019"
+[dumpfile_size] 17287831
 [savefile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/apsk_modulator/test/waveform.gtkw"
-[timestart] 0
+[timestart] 360
 [size] 1366 715
 [pos] -1 -1
-*-12.274762 4420 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-11.274762 5690 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] apsk_modulator.pulse_shape_filter_i.
 [treeopen] apsk_modulator.pulse_shape_filter_i.fir_filter[0].
 [treeopen] apsk_modulator.pulse_shape_filter_i.fir_filter[1].
 [treeopen] apsk_modulator.pulse_shape_filter_i.fir_filter[2].
 [treeopen] apsk_modulator.pulse_shape_filter_i.fir_filter[3].
 [sst_width] 306
-[signals_width] 494
+[signals_width] 528
 [sst_expanded] 1
 [sst_vpaned_height] 184
 @28
@@ -33,13 +33,27 @@ apsk_modulator.data_out_tdata[31:0]
 apsk_modulator.data_out_tlast
 apsk_modulator.data_out_tready
 apsk_modulator.data_out_tvalid
-@29
 apsk_modulator.data_in_tlast_latched
 @200
 -
+@c00025
+apsk_modulator.data_in_count[5:0]
 @28
+(0)apsk_modulator.data_in_count[5:0]
+(1)apsk_modulator.data_in_count[5:0]
+(2)apsk_modulator.data_in_count[5:0]
+(3)apsk_modulator.data_in_count[5:0]
+(4)apsk_modulator.data_in_count[5:0]
+(5)apsk_modulator.data_in_count[5:0]
+@1401201
+-group_end
+@200
+-
+@28
+apsk_modulator.data_in_latch[37:0]
 apsk_modulator.lut_data_in_tlast
 apsk_modulator.lut_data_in_tvalid
+apsk_modulator.lut_data_in_tdata[7:0]
 apsk_modulator.lut_data_out_tready
 apsk_modulator.lut_data_out_tvalid
 @24
@@ -62,10 +76,6 @@ apsk_modulator.pulse_shape_filter_i.data_in_tvalid
 apsk_modulator.pulse_shape_filter_i.data_in_tready
 @200
 -
-@8420
-apsk_modulator.i_data[15:0]
-apsk_modulator.q_data[15:0]
-@200
 -
 @22
 apsk_modulator.pulse_shape_filter_i.data_in_tdata[15:0]
@@ -105,7 +115,6 @@ apsk_modulator.lut_data_out_tready
 @24
 apsk_modulator.data_in_count[5:0]
 @28
-apsk_modulator.data_in_latch[31:0]
 apsk_modulator.lut_data_in_tdata[7:0]
 apsk_modulator.lookup_table_inst.data_in_tvalid
 apsk_modulator.lookup_table_inst.data_in_tready

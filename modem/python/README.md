@@ -6,7 +6,7 @@ A collection of Python code which is used to model, simulate and verify the mode
 
 ### [algorithm](algorithm)
 
-Scripts used for algortihm development such as [DVB-S2X modulation plot](algorithm/modulator/DVB-S2X Modulation Generation.ipynb).
+Scripts used for algortihm development such as [DVB-S2X modulation plot](algorithm/modulator/DVB-S2X%20Modulation%20Generation.ipynb).
 
 
 ### [library](library)

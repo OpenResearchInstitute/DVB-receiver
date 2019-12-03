@@ -4,11 +4,11 @@ This folder contains the modulator and demodulator of the DVB-S2X implementation
 
 ## File Breakdown
 
-###[python](python)
+### [python](python)
 
 All Python code which includes library modules, algortihm development and Python virtual enviroment setup.
 
-###[hdl](hdl)
+### [hdl](hdl)
 
 HDL descriptions used for FPGA (or ASIC) implementation.  Includes unit test definitions.
 

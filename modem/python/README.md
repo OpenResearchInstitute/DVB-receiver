@@ -4,12 +4,12 @@ A collection of Python code which is used to model, simulate and verify the mode
 
 ## File Breakdown
 
-###[algorithm](algorithm)
+### [algorithm](algorithm)
 
 Scripts used for algortihm development such as [DVB-S2X modulation plot](algorithm/modulator/DVB-S2X Modulation Generation.ipynb).
 
 
-###[library](library)
+### [library](library)
 
 A number of library files which are used across the modem design for modelling and verification.  Notable files include:
 
@@ -19,6 +19,6 @@ A number of library files which are used across the modem design for modelling a
 
 
 
-###[cocotb](cocotb)
+### [cocotb](cocotb)
 
 Additional or modified CocoTB drivers used during HDL verification.

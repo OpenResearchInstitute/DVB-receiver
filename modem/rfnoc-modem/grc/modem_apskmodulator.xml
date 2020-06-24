@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<block>
+  <name>RFNoC: apskmodulator</name>
+  <key>modem_apskmodulator</key>
+  <category>modem</category>
+  <import>import modem</import>
+  <make>modem.apskmodulator(
+          $coeffs,
+          $constellation,
+          self.device3,
+          #if $block_index()
+          ${block_index},
+          #else
+          -1,
+          #end if
+          #if $device_index()
+          ${device_index},
+          #else
+          -1,
+          #end if
+)
+\# Set them twice just in case:
+self.$(id).set_coeffs($coeffs)
+self.$(id).set_constellation($constellation)
+</make>
+  <callback>set_coeffs($coeffs)</callback>
+  <callback>set_constellation($constellation)</callback>
+
+  <param>
+    <name>Filter Taps</name>
+    <key>coeffs</key>
+    <value>[65531, 48, 40, 65505, 65454, 65505, 87, 134, 24, 65402, 65414, 126, 346, 126, 64924, 64255, 64670, 1281, 4727, 7961, 9286, 7961, 4727, 1281, 64670, 64255, 64924, 126, 346, 126, 65414, 65402, 24, 134, 87, 65505, 65454, 65505, 40, 48]</value>
+    <type>int_vector</type>
+  </param>
+
+  <param>
+    <name>Constellation Map</name>
+    <key>constellation</key>
+    <value>[759246145, 16383, 49153, 3535786687, 1073676288, 3535744321, 759288511, 3221356544]</value>
+    <type>int_vector</type>
+  </param>
+
+  <param>
+    <name>FIR Select</name>
+    <key>block_index</key>
+    <value>-1</value>
+    <type>int</type>
+    <hide>#if int($block_index()) &lt; 0 then 'part' else 'none'#</hide>
+    <tab>RFNoC Config</tab>
+  </param>
+
+  <param>
+    <name>Device Select</name>
+    <key>device_index</key>
+    <value>-1</value>
+    <type>int</type>
+    <hide>#if int($device_index()) &lt; 0 then 'part' else 'none'#</hide>
+    <tab>RFNoC Config</tab>
+  </param>
+
+  <param>
+    <name>FPGA Module Name</name>
+    <key>fpga_module_name</key>
+    <value>noc_block_apskmodulator</value>
+    <type>string</type>
+    <hide>all</hide>
+    <tab>RFNoC Config</tab>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>u8</type>
+    <!-- <vlen>$grvlen</vlen> -->
+    <domain>rfnoc</domain>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <!-- <vlen>$grvlen</vlen> -->
+    <domain>rfnoc</domain>
+  </source>
+</block>
+
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+<!--   <param>
+    <name>Host Data Type</name>
+    <key>type</key>
+    <type>enum</type>
+    <option>
+      <name>Complex float32</name>
+      <key>fc32</key>
+      <opt>type:complex</opt>
+    </option>
+    <option>
+      <name>Complex int16</name>
+      <key>sc16</key>
+      <opt>type:sc16</opt>
+    </option>
+    <option>
+      <name>Byte</name>
+      <key>u8</key>
+      <opt>type:byte</opt>
+    </option>
+    <option>
+      <name>VITA word32</name>
+      <key>item32</key>
+      <opt>type:s32</opt>
+    </option>
+  </param> -->
+  <!--RFNoC basic block configuration -->
+<!--   <param>
+    <name>Device Select</name>
+    <key>device_index</key>
+    <value>-1</value>
+    <type>int</type>
+    <hide>#if int($device_index()) &lt; 0 then 'part' else 'none'#</hide>
+    <tab>RFNoC Config</tab>
+  </param>
+
+  <param>
+    <name>apskmodulator Select</name>
+    <key>block_index</key>
+    <value>-1</value>
+    <type>int</type>
+    <hide>#if int($block_index()) &lt; 0 then 'part' else 'none'#</hide>
+    <tab>RFNoC Config</tab>
+  </param> -->
+
+
+
+<!--   <param>
+    <name>Enable EOB on Stop</name>
+    <key>enable_eob_on_stop</key>
+    <value>True</value>
+    <type>bool</type>
+    <hide>#if $enable_eob_on_stop() == True then 'part' else 'none'#</hide>
+    <tab>RFNoC Config</tab>
+  </param>
+
+  <param>
+    <name>FPGA Module Name</name>
+    <key>fpga_module_name</key>
+    <value>noc_block_apskmodulator</value>
+    <type>string</type>
+    <hide>all</hide>
+    <tab>RFNoC Config</tab>
+  </param> -->
+
+<!--   <param>
+    <name>Force Vector Length</name>
+    <key>grvlen</key>
+    <value>1</value>
+    <type>int</type>
+  </param> -->
+
+<!--   <param>
+    <name>Device Format</name>
+    <key>otw</key>
+    <type>enum</type>
+    <option>
+      <name>Complex int16</name>
+      <key>sc16</key>
+    </option>
+    <option>
+      <name>Complex int8</name>
+      <key>sc8</key>
+    </option>
+    <option>
+      <name>Byte</name>
+      <key>u8</key>
+    </option>
+  </param> -->
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->

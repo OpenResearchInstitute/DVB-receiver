@@ -1,0 +1,8 @@
+$(addprefix SOURCES_PATH, \
+noc_block_apskmodulator.v \
+apsk_modulator_configmod.v \
+fir_filter.v \
+lookup_table.v \
+multiply_accumulate.v \
+polyphase_filter.v \
+) \

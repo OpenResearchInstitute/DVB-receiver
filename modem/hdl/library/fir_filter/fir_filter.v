@@ -184,7 +184,7 @@ module fir_filter #
 		end
 		else begin
 			if (coefficients_in_tvalid & coefficients_in_tready) begin
-				coefficient_index += 1;
+				coefficient_index <= coefficient_index + 1;
 			end
 		end
 	end

@@ -52,6 +52,8 @@ def basic(dut):
 		data_in = [np.random.randint(2**dut_control_obj.INPUT_WIDTH) for _ in range(data_length)]
 		yield dut_control_obj.data_in_write(data_in)
 
+		print(data_in)
+
 		# parse the output data
 		yield dut_control_obj.axiss_read_handle.join()
 		dut_control_obj.data_out_read_parse()

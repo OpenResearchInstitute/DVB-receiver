@@ -1,2 +1,5 @@
 # compiled python files
 *.pyc
+
+# folder for Vivado runs
+vivado_impl/

@@ -1,0 +1,55 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Wed Nov 20 19:05:04 2019
+[*]
+[dumpfile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/lookup_table/test/waveform.vcd"
+[dumpfile_mtime] "Wed Nov 20 19:02:32 2019"
+[dumpfile_size] 577021
+[savefile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/lookup_table/test/waveform.gtkw"
+[timestart] 0
+[size] 1366 715
+[pos] -1 -1
+*-15.525400 80500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] lookup_table.
+[sst_width] 248
+[signals_width] 372
+[sst_expanded] 1
+[sst_vpaned_height] 185
+@28
+lookup_table.data_load
+lookup_table.data_load_aclk
+@22
+lookup_table.data_load_address[7:0]
+@29
+lookup_table.data_load_aresetn
+@22
+lookup_table.data_load_tdata[31:0]
+@28
+lookup_table.data_load_tlast
+lookup_table.data_load_tready
+lookup_table.data_load_tvalid
+@200
+-
+@28
+lookup_table.data_in_aclk
+lookup_table.data_in_aresetn
+@22
+lookup_table.data_in_tdata[7:0]
+@28
+lookup_table.data_in_tlast
+lookup_table.data_in_tready
+lookup_table.data_in_tvalid
+@200
+-
+@28
+lookup_table.data_out_aclk
+lookup_table.data_out_aresetn
+lookup_table.data_out_data
+@22
+lookup_table.data_out_tdata[31:0]
+@28
+lookup_table.data_out_tlast
+lookup_table.data_out_tready
+lookup_table.data_out_tvalid
+[pattern_trace] 1
+[pattern_trace] 0

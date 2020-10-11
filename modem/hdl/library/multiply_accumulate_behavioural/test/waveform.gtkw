@@ -1,0 +1,111 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Sun Dec  1 20:59:13 2019
+[*]
+[dumpfile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/multiply_accumulate/test/waveform.vcd"
+[dumpfile_mtime] "Sun Dec  1 20:55:18 2019"
+[dumpfile_size] 13090
+[savefile] "/home/tom/repositories/DVB-receiver/modem/hdl/library/multiply_accumulate/test/waveform.gtkw"
+[timestart] 0
+[size] 1366 715
+[pos] -1 -1
+*-10.000000 300 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] multiply_accumulate.
+[sst_width] 248
+[signals_width] 354
+[sst_expanded] 1
+[sst_vpaned_height] 185
+@28
+multiply_accumulate.ce_calculate
+multiply_accumulate.ce_coefficient
+multiply_accumulate.clock
+@22
+multiply_accumulate.coefficient_in[15:0]
+multiply_accumulate.data_carry[15:0]
+multiply_accumulate.data_in[15:0]
+multiply_accumulate.data_out[15:0]
+multiply_accumulate.in_mode[4:0]
+multiply_accumulate.op_mode[6:0]
+@28
+multiply_accumulate.reset
+multiply_accumulate.reset_coefficient
+@22
+multiply_accumulate.carry_in[47:0]
+multiply_accumulate.carry_out[47:0]
+@200
+-
+@22
+multiply_accumulate.DSP48E1_inst.ACIN[29:0]
+multiply_accumulate.DSP48E1_inst.ACOUT[29:0]
+multiply_accumulate.DSP48E1_inst.ALUMODE[3:0]
+multiply_accumulate.DSP48E1_inst.A[29:0]
+multiply_accumulate.DSP48E1_inst.BCIN[17:0]
+multiply_accumulate.DSP48E1_inst.BCOUT[17:0]
+multiply_accumulate.DSP48E1_inst.B[17:0]
+@28
+multiply_accumulate.DSP48E1_inst.C1
+multiply_accumulate.DSP48E1_inst.C2
+multiply_accumulate.DSP48E1_inst.C3
+multiply_accumulate.DSP48E1_inst.CARRYCASCIN
+multiply_accumulate.DSP48E1_inst.CARRYCASCOUT
+multiply_accumulate.DSP48E1_inst.CARRYIN
+multiply_accumulate.DSP48E1_inst.CARRYINSEL[2:0]
+@22
+multiply_accumulate.DSP48E1_inst.CARRYOUT[3:0]
+@28
+multiply_accumulate.DSP48E1_inst.CEA1
+multiply_accumulate.DSP48E1_inst.CEA2
+multiply_accumulate.DSP48E1_inst.CEAD
+multiply_accumulate.DSP48E1_inst.CEALUMODE
+multiply_accumulate.DSP48E1_inst.CEB1
+multiply_accumulate.DSP48E1_inst.CEB2
+multiply_accumulate.DSP48E1_inst.CEC
+multiply_accumulate.DSP48E1_inst.CECARRYIN
+multiply_accumulate.DSP48E1_inst.CECTRL
+multiply_accumulate.DSP48E1_inst.CED
+multiply_accumulate.DSP48E1_inst.CEINMODE
+multiply_accumulate.DSP48E1_inst.CEM
+multiply_accumulate.DSP48E1_inst.CEP
+multiply_accumulate.DSP48E1_inst.CLK
+@22
+multiply_accumulate.DSP48E1_inst.C[47:0]
+multiply_accumulate.DSP48E1_inst.D[24:0]
+@28
+multiply_accumulate.DSP48E1_inst.GSR
+@22
+multiply_accumulate.DSP48E1_inst.INMODE[4:0]
+multiply_accumulate.DSP48E1_inst.IS_ALUMODE_INVERTED_BIN[3:0]
+@28
+multiply_accumulate.DSP48E1_inst.IS_CARRYIN_INVERTED_BIN
+multiply_accumulate.DSP48E1_inst.IS_CLK_INVERTED_BIN
+@22
+multiply_accumulate.DSP48E1_inst.IS_INMODE_INVERTED_BIN[4:0]
+multiply_accumulate.DSP48E1_inst.IS_OPMODE_INVERTED_BIN[6:0]
+@28
+multiply_accumulate.DSP48E1_inst.MULTSIGNIN
+@29
+multiply_accumulate.DSP48E1_inst.MULTSIGNOUT
+@22
+multiply_accumulate.DSP48E1_inst.OPMODE[6:0]
+@28
+multiply_accumulate.DSP48E1_inst.OVERFLOW
+multiply_accumulate.DSP48E1_inst.PATTERNBDETECT
+multiply_accumulate.DSP48E1_inst.PATTERNDETECT
+@22
+multiply_accumulate.DSP48E1_inst.PCIN[47:0]
+multiply_accumulate.DSP48E1_inst.PCOUT[47:0]
+multiply_accumulate.DSP48E1_inst.P[47:0]
+@28
+multiply_accumulate.DSP48E1_inst.RSTA
+multiply_accumulate.DSP48E1_inst.RSTALLCARRYIN
+multiply_accumulate.DSP48E1_inst.RSTALUMODE
+multiply_accumulate.DSP48E1_inst.RSTB
+multiply_accumulate.DSP48E1_inst.RSTC
+multiply_accumulate.DSP48E1_inst.RSTCTRL
+multiply_accumulate.DSP48E1_inst.RSTD
+multiply_accumulate.DSP48E1_inst.RSTINMODE
+multiply_accumulate.DSP48E1_inst.RSTM
+multiply_accumulate.DSP48E1_inst.RSTP
+multiply_accumulate.DSP48E1_inst.UNDERFLOW
+[pattern_trace] 1
+[pattern_trace] 0

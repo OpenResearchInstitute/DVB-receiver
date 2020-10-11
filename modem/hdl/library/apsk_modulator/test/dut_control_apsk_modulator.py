@@ -222,8 +222,6 @@ class dut_control_apsk_modulator(dut_control):
 		# convert negative numbers to twos complement and arrange for the polyphase structure
 		coefficients = self.signed_to_fixedpoint(coefficients, self.COEFFS_WIDTH, multiplier=1.0)
 
-		print(coefficients)
-
 		# reset the coefficients
 		self.dut.coefficients_in_aresetn = 0
 		yield self.wait(2) 
@@ -256,8 +254,6 @@ class dut_control_apsk_modulator(dut_control):
 
 		# combine the two constellation maps into a 32 bit number
 		data = [int(q_data[i]*2**16) + int(i_data[i]) for i in range(len(i_data))]
-
-		print(data)
 
 		# reset the modulation
 		self.dut.lut_data_load_aresetn = 0
@@ -401,14 +397,8 @@ class dut_control_apsk_modulator(dut_control):
 		expected = python_modulator.modulate(input_data_bits)
 		received = self.data_read
 
-		print(np.real(received))
-		print(np.imag(received))
-
 		# calculate the number of samples delay to propagate through pipelined registers
 		delay = int((self.NUMBER_TAPS/self.SAMPLES_PER_SYMBOL-1)*self.SAMPLES_PER_SYMBOL)
-
-		print(max([abs(_) for _ in expected]))
-		print(max([abs(_) for _ in received]))
 
 		# if requested plot the filter coefficients
 		if self.PLOT:

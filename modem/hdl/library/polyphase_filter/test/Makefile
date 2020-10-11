@@ -1,6 +1,7 @@
 
 VERILOG_SOURCES = 	$(PWD)/../polyphase_filter.v \
 					$(PWD)/../../multiply_accumulate/multiply_accumulate.v \
+					$(PWD)/../../multiply_accumulate_behavioural/multiply_accumulate_behavioural.v \
 					$(PWD)/../../fir_filter/fir_filter.v \
 					$(XILINX_VERILOG_LIB)/src/glbl.v
 					

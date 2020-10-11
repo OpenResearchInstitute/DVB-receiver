@@ -2,6 +2,7 @@
 
 VERILOG_SOURCES = 	$(PWD)/../fir_filter.v \
 					$(PWD)/../../multiply_accumulate/multiply_accumulate.v \
+					$(PWD)/../../multiply_accumulate_behavioural/multiply_accumulate_behavioural.v \
 					$(XILINX_VERILOG_LIB)/src/glbl.v
 					
 COMPILE_ARGS = -s glbl -y $(XILINX_VERILOG_LIB)/src/unisims

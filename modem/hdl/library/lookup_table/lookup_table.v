@@ -222,13 +222,13 @@ module lookup_table #
 	);
 
 
-	// // used to create the GTKwave dump file
-	// `ifdef COCOTB_SIM
-	// 		initial begin
-	// 		$dumpfile ("waveform.vcd");
-	// 		$dumpvars (0, lookup_table);
-	// 		#1;
-	// 	end
-	// `endif
+	// used to create the GTKwave dump file
+	`ifdef COCOTB_SIM
+			initial begin
+			$dumpfile ("waveform.vcd");
+			$dumpvars (0, lookup_table);
+			#1;
+		end
+	`endif
 
 endmodule

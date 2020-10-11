@@ -215,6 +215,8 @@ module fir_filter #
 	end
 
 
+
+
 	// create the DSP chain
 	genvar index;
 	generate
@@ -222,7 +224,7 @@ module fir_filter #
 		begin : macs
 
 			if (index==0) begin
-				multiply_accumulate #(
+				multiply_accumulate_behavioural #(
 					.DATA_WIDTH(DATA_IN_WIDTH),
 					.COEFFICIENT_WIDTH(COEFFICIENT_WIDTH),
 					.CARRY_WIDTH(CARRY_WIDTH),
@@ -249,7 +251,7 @@ module fir_filter #
 				);
 			end
 			else if (index==NUMBER_TAPS-1) begin
-				multiply_accumulate #(
+				multiply_accumulate_behavioural #(
 					.DATA_WIDTH(DATA_IN_WIDTH),
 					.COEFFICIENT_WIDTH(COEFFICIENT_WIDTH),
 					.CARRY_WIDTH(CARRY_WIDTH),
@@ -276,7 +278,7 @@ module fir_filter #
 				);
 			end
 			else begin
-				multiply_accumulate #(
+				multiply_accumulate_behavioural #(
 					.DATA_WIDTH(DATA_IN_WIDTH),
 					.COEFFICIENT_WIDTH(COEFFICIENT_WIDTH),
 					.CARRY_WIDTH(CARRY_WIDTH),
@@ -306,13 +308,13 @@ module fir_filter #
 	endgenerate
 
 
-	// // used to create the GTKwave dump file
-	// `ifdef COCOTB_SIM
-	// 		initial begin
-	// 		$dumpfile ("waveform.vcd");
-	// 		$dumpvars (0, fir_filter);
-	// 		#1;
-	// 	end
-	// `endif
+	// used to create the GTKwave dump file
+	`ifdef COCOTB_SIM
+			initial begin
+			$dumpfile ("waveform.vcd");
+			$dumpvars (0, fir_filter);
+			#1;
+		end
+	`endif
 
 endmodule

@@ -101,8 +101,8 @@
 	wire									lut_data_out_tready_i;
 	wire									lut_data_out_tready_q;
 	wire [2*DATA_WIDTH-1:0]					lut_data_out_tdata;
-	reg  									lut_data_out_tlast;
-	reg  									lut_data_out_tvalid;
+	wire  									lut_data_out_tlast;
+	wire  									lut_data_out_tvalid;
 
 	// filter signals
 	wire 									filter_i_out_aclk;
@@ -138,7 +138,7 @@
 	
 	assign lut_data_in_aresetn = !reset;
 	assign lut_data_out_aresetn = !reset;
-	assign lut_data_load_aresetn = !reset;
+	//assign lut_data_load_aresetn = data_in_aresetn;
 	assign filter_i_out_aresetn = !reset;
 	assign filter_q_out_aresetn = !reset;
 
@@ -292,7 +292,7 @@
 
 
 	// instantiate the modulation lookup table
-	lookup_table #(
+	lookup_table_behavioural #(
 		.TDATA_WIDTH(2*DATA_WIDTH),
 		.ADDRESS_WIDTH(ADDRESS_WIDTH)
 	) lookup_table_inst (

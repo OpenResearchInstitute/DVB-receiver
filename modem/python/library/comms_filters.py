@@ -97,6 +97,8 @@ def rrcosfilter(N, alpha, Ts, Fs):
         the impulse response.
     """
 
+    N=N-1
+
     T_delta = 1/float(Fs)
     time_idx = ((np.arange(N)-N/2))*T_delta
     sample_num = np.arange(N)
@@ -116,6 +118,9 @@ def rrcosfilter(N, alpha, Ts, Fs):
             h_rrc[x] = (np.sin(np.pi*t*(1-alpha)/Ts) +  \
                     4*alpha*(t/Ts)*np.cos(np.pi*t*(1+alpha)/Ts))/ \
                     (np.pi*t*(1-(4*alpha*t/Ts)*(4*alpha*t/Ts))/Ts)
+
+    time_idx += [time_idx[-1] + T_delta]
+    h_rrc    += [h_rrc[0]]
 
     return time_idx, h_rrc
 

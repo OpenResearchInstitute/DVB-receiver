@@ -37,8 +37,6 @@ class carrier_recovery_costas(recovery):
         mixed = lo * input_sample
 
         # split the mixed signal into real and imaginary components
-        # real = float(np.real(mixed))
-        # imag = float(np.imag(mixed))
         real = np.real(mixed)
         imag = np.imag(mixed)
         real_sgn = np.sign(real)
@@ -52,27 +50,25 @@ class carrier_recovery_costas(recovery):
 
         # select the correct error function
         if self.modulation_type == "BPSK":
-            error = real * imag
+            self.error = real * imag
         elif self.modulation_type == "QPSK":
             i_arm = real * imag_sgn
             q_arm = imag * real_sgn
-            error = i_arm - q_arm
+            self.error = i_arm - q_arm
         elif self.modulation_type in {"OQPSK", "GMSK"}:
             i_arm = real * imag_sgn
             q_arm = imag * real_sgn
-            error = i_arm - q_arm
+            self.error = i_arm - q_arm
 
-        # error = real - imag
-    
         # filter the error
         # error_filtered = self.iir.update(error)
-        error_filtered = self.fir.update(error)
-        control_signal = self.pi.update(error_filtered)
+        self.error_filtered = self.fir.update(self.error)
+        self.control_signal = self.pi.update(self.error_filtered)
     
         # create the new LO outputs
-        self.phi  -= control_signal
+        self.phi  -= self.control_signal
 
-        return mixed, error_filtered, self.phi
+        return mixed
 
         
     def stability_analysis(self):

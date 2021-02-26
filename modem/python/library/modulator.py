@@ -4,7 +4,7 @@ import gauss_pulse
 import comms_filters
 import json
 
-class generic_modem
+class modulator
 
 	def __init__(self, modulation_type, samples_per_symbol, pulse_factor, pulse_length, config, filename):
 		""" 
